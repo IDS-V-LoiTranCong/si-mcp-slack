@@ -1,0 +1,48 @@
+# config/holidays.yml
+# Ngày nghỉ chính thức của IDS Vietnam. Bot Daily Report sẽ KHÔNG chạy vào
+# các ngày liệt kê ở đây (và cũng không chạy Thứ Bảy / Chủ Nhật).
+#
+# QUY TẮC:
+# - Ghi từng ngày riêng lẻ theo định dạng YYYY-MM-DD. Không dùng khoảng ngày.
+# - Cập nhật đầu mỗi năm khi công ty công bố lịch nghỉ mới.
+# - Nghỉ bù, nghỉ phát sinh, nghỉ theo dự án: thêm trực tiếp vào danh sách năm
+#   tương ứng.
+
+timezone: Asia/Ho_Chi_Minh
+
+2026:
+  # New year's day
+  - date: 2026-01-01   # Thứ Năm
+    name: Tết Dương lịch
+
+  # Lunar new year (16-Feb ~ 20-Feb)
+  - date: 2026-02-16   # Thứ Hai
+    name: Tết Nguyên đán
+  - date: 2026-02-17   # Thứ Ba
+    name: Tết Nguyên đán
+  - date: 2026-02-18   # Thứ Tư
+    name: Tết Nguyên đán
+  - date: 2026-02-19   # Thứ Năm
+    name: Tết Nguyên đán
+  - date: 2026-02-20   # Thứ Sáu
+    name: Tết Nguyên đán
+
+  # Hung Kings Commemorations
+  - date: 2026-04-27   # Thứ Hai
+    name: Giỗ Tổ Hùng Vương
+
+  # Liberation day and International Workers' Day (30-Apr ~ 1-May)
+  - date: 2026-04-30   # Thứ Năm
+    name: Ngày Giải phóng miền Nam
+  - date: 2026-05-01   # Thứ Sáu
+    name: Ngày Quốc tế Lao động
+
+  # Vietnam National Day (1-Sep ~ 2-Sep)
+  - date: 2026-09-01   # Thứ Ba
+    name: Quốc khánh
+  - date: 2026-09-02   # Thứ Tư
+    name: Quốc khánh
+
+  # IDS Vietnam special Holiday
+  - date: 2026-12-31   # Thứ Năm
+    name: Nghỉ đặc biệt IDS Vietnam

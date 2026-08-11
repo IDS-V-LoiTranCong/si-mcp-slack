@@ -1,0 +1,31 @@
+# config/members.yml
+# Danh sách thành viên bắt buộc gửi Daily Report, key theo Slack Channel ID.
+#
+# QUY TẮC:
+# - slack_id là khoá đối chiếu duy nhất. Bot so khớp người gửi reply bằng
+#   slack_id, KHÔNG bao giờ so khớp bằng name.
+# - name chỉ dùng để hiển thị trong file báo cáo cho dễ đọc. Đổi name không
+#   ảnh hưởng logic.
+# - exclude: những người có mặt trong channel nhưng không phải gửi report
+#   (lead, BrSE, PM, khách hàng, tài khoản bot). Không tính vào mẫu số.
+
+C0BPE1VCELR:
+  project: SI Test Report
+  channel: pj-ndt-test-report
+  members:
+    - slack_id: C0BPE1VCELR
+      name: Công Lợi
+      role: Developer
+  exclude:
+    - slack_id: U0XXXXXXXX9
+      name: Lead / BrSE
+      reason: Người nhận báo cáo, không phải gửi
+
+C0BNWSFS363:
+  project: SI Test Report2
+  channel: pj-ndt-test-report2
+  members:
+    - slack_id: C0BPE1VCELR
+      name: Công Lợi
+      role: Developer
+  exclude: []
