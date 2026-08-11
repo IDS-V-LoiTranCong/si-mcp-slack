@@ -16,6 +16,12 @@ C0BPE1VCELR:
     - slack_id: U02Q98WQDGE
       name: Công Lợi
       role: Developer
+    - slack_id: U01FRSZ6G03
+      name: Lê Thanh Hải
+      role: Developer
+    - slack_id: U9K73J941
+      name: Trương Lăng
+      role: Developer
   exclude: []
 
 C0BNWSFS363:
@@ -24,5 +30,11 @@ C0BNWSFS363:
   members:
     - slack_id: U02Q98WQDGE
       name: Công Lợi
+      role: Developer
+    - slack_id: U01FRSZ6G03
+      name: Lê Thanh Hải
+      role: Developer
+    - slack_id: U9K73J941
+      name: Trương Lăng
       role: Developer
   exclude: []
