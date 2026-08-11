@@ -13,8 +13,8 @@ C0BPE1VCELR:
   project: SI Test Report
   channel: pj-ndt-test-report
   members:
-    - slack_id: C0BPE1VCELR
-      name: Cong Loi
+    - slack_id: U02Q98WQDGE
+      name: Công Lợi
       role: Developer
   exclude: []
 
@@ -22,7 +22,7 @@ C0BNWSFS363:
   project: SI Test Report2
   channel: pj-ndt-test-report2
   members:
-    - slack_id: C0BPE1VCELR
-      name: Cong Loi
+    - slack_id: U02Q98WQDGE
+      name: Công Lợi
       role: Developer
   exclude: []
