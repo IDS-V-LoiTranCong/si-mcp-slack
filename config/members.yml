@@ -42,9 +42,6 @@ C0BNWSFS363:
     - slack_id: U01FRSZ6G03
       name: Lê Thanh Hải
       role: Developer
-    - slack_id: U9K73J941
-      name: Trương Lăng
-      role: Developer
   exclude: []
   recipients:
     - slack_id: U02Q98WQDGE
