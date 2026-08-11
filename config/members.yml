@@ -8,6 +8,10 @@
 #   ảnh hưởng logic.
 # - exclude: những người có mặt trong channel nhưng không phải gửi report
 #   (lead, BrSE, PM, khách hàng, tài khoản bot). Không tính vào mẫu số.
+# - recipients: người nhận báo cáo (leader, BrSE, PM...). Bot sẽ @mention
+#   (dùng <@slack_id>) những người này trong tin nhắn đính kèm file summary.
+#   Đây là danh sách RIÊNG với members/exclude — một người có thể vừa là
+#   recipient vừa nằm trong exclude nếu họ chỉ nhận báo cáo, không gửi report.
 
 C0BPE1VCELR:
   project: SI Test Report
@@ -23,6 +27,10 @@ C0BPE1VCELR:
       name: Trương Lăng
       role: Developer
   exclude: []
+  recipients:
+    - slack_id: U02Q98WQDGE
+      name: Công Lợi
+      role: Leader
 
 C0BNWSFS363:
   project: SI Test Report2
@@ -38,3 +46,7 @@ C0BNWSFS363:
       name: Trương Lăng
       role: Developer
   exclude: []
+  recipients:
+    - slack_id: U02Q98WQDGE
+      name: Công Lợi
+      role: Leader
