@@ -14,18 +14,15 @@ C0BPE1VCELR:
   channel: pj-ndt-test-report
   members:
     - slack_id: C0BPE1VCELR
-      name: Công Lợi
+      name: Cong Loi
       role: Developer
-  exclude:
-    - slack_id: U0XXXXXXXX9
-      name: Lead / BrSE
-      reason: Người nhận báo cáo, không phải gửi
+  exclude: []
 
 C0BNWSFS363:
   project: SI Test Report2
   channel: pj-ndt-test-report2
   members:
     - slack_id: C0BPE1VCELR
-      name: Công Lợi
+      name: Cong Loi
       role: Developer
   exclude: []
