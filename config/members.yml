@@ -25,3 +25,16 @@ C0BPE1VCELR:
     - slack_id: U02Q98WQDGE
       name: Công Lợi
       role: Leader
+
+C0BNWSFS363:
+  project: NDT Sale2
+  channel: pj-ndt-test-report2
+  members:
+    - slack_id: U02Q98WQDGE
+      name: Công Lợi
+      role: Developer
+  exclude: []
+  recipients:
+    - slack_id: U02Q98WQDGE
+      name: Công Lợi
+      role: Leader
