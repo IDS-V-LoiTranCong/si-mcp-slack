@@ -1,0 +1,29 @@
+{
+  "name": "mcp-slack",
+  "version": "1.0.0",
+  "description": "Cursor Automation instructions and a Slack Markdown upload MCP server",
+  "type": "module",
+  "scripts": {
+    "check": "node --check mcp/slack-upload-server.mjs",
+    "start:mcp": "node mcp/slack-upload-server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IDS-V-LoiTranCong/si-mcp-slack.git"
+  },
+  "keywords": [
+    "mcp",
+    "slack",
+    "cursor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IDS-V-LoiTranCong/si-mcp-slack/issues"
+  },
+  "homepage": "https://github.com/IDS-V-LoiTranCong/si-mcp-slack#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  }
+}
