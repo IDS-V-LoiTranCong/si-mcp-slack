@@ -36,14 +36,25 @@ async function readSlackResponse(response, method) {
   return body;
 }
 
-async function callSlackApi(method, token, body) {
+async function callSlackApi(method, token, body, { form = false } = {}) {
   const response = await fetch(`https://slack.com/api/${method}`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json; charset=utf-8",
+      "Content-Type": form
+        ? "application/x-www-form-urlencoded; charset=utf-8"
+        : "application/json; charset=utf-8",
     },
-    body: JSON.stringify(body),
+    body: form
+      ? new URLSearchParams(
+          Object.fromEntries(
+            Object.entries(body).map(([key, value]) => [
+              key,
+              typeof value === "string" ? value : String(value),
+            ]),
+          ),
+        ).toString()
+      : JSON.stringify(body),
   });
 
   return readSlackResponse(response, method);
@@ -90,6 +101,8 @@ server.registerTool(
         throw new Error("Markdown content exceeds the 1 MiB safety limit");
       }
 
+      // Slack rejects JSON bodies for this method with invalid_arguments;
+      // form-urlencoded is required in practice.
       const uploadTicket = await callSlackApi(
         "files.getUploadURLExternal",
         token,
@@ -97,6 +110,7 @@ server.registerTool(
           filename,
           length: fileBytes.byteLength,
         },
+        { form: true },
       );
 
       const uploadResponse = await fetch(uploadTicket.upload_url, {
