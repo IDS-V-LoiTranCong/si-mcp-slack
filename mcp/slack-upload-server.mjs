@@ -30,13 +30,18 @@ async function readSlackResponse(response, method) {
 
   if (!response.ok || !body?.ok) {
     const reason = body?.error ?? `HTTP ${response.status}`;
-    throw new Error(`${method} failed: ${reason}`);
+    const messages = body?.response_metadata?.messages;
+    const details =
+      Array.isArray(messages) && messages.length > 0
+        ? ` (${messages.join("; ")})`
+        : "";
+    throw new Error(`${method} failed: ${reason}${details}`);
   }
 
   return body;
 }
 
-async function callSlackApi(method, token, body) {
+async function callSlackJsonApi(method, token, body) {
   const response = await fetch(`https://slack.com/api/${method}`, {
     method: "POST",
     headers: {
@@ -44,6 +49,19 @@ async function callSlackApi(method, token, body) {
       "Content-Type": "application/json; charset=utf-8",
     },
     body: JSON.stringify(body),
+  });
+
+  return readSlackResponse(response, method);
+}
+
+async function callSlackFormApi(method, token, body) {
+  const response = await fetch(`https://slack.com/api/${method}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+    },
+    body: new URLSearchParams(body),
   });
 
   return readSlackResponse(response, method);
@@ -90,12 +108,12 @@ server.registerTool(
         throw new Error("Markdown content exceeds the 1 MiB safety limit");
       }
 
-      const uploadTicket = await callSlackApi(
+      const uploadTicket = await callSlackFormApi(
         "files.getUploadURLExternal",
         token,
         {
           filename,
-          length: fileBytes.byteLength,
+          length: String(fileBytes.byteLength),
         },
       );
 
@@ -111,7 +129,7 @@ server.registerTool(
         throw new Error(`Slack file transfer failed: HTTP ${uploadResponse.status}`);
       }
 
-      const completed = await callSlackApi(
+      const completed = await callSlackJsonApi(
         "files.completeUploadExternal",
         token,
         {
