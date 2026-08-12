@@ -50,46 +50,6 @@ async function callSlackApi(method, token, body) {
 }
 
 server.registerTool(
-  "slack_get_upload_identity",
-  {
-    description:
-      "Return the Slack user ID represented by SLACK_USER_TOKEN. Use it to verify that an existing daily-report marker was posted by the trusted uploader.",
-    inputSchema: {},
-  },
-  async () => {
-    try {
-      const identity = await callSlackApi("auth.test", getSlackToken(), {});
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: JSON.stringify({
-              ok: true,
-              user_id: identity.user_id,
-              team_id: identity.team_id,
-            }),
-          },
-        ],
-      };
-    } catch (error) {
-      return {
-        isError: true,
-        content: [
-          {
-            type: "text",
-            text:
-              error instanceof Error
-                ? error.message
-                : "Unknown identity lookup error",
-          },
-        ],
-      };
-    }
-  },
-);
-
-server.registerTool(
   "slack_upload_markdown",
   {
     description:
