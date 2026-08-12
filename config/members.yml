@@ -13,28 +13,46 @@
 #   Đây là danh sách RIÊNG với members/exclude — một người có thể vừa là
 #   recipient vừa nằm trong exclude nếu họ chỉ nhận báo cáo, không gửi report.
 
-C0BPE1VCELR:
-  project: NDT Sale
-  channel: pj-ndt-test-report
+C0ARLFP827K:
+  project: NDT Core
+  channel: pj-ndt-core-vn
   members:
-    - slack_id: U02Q98WQDGE
-      name: Công Lợi
+    - slack_id: U01UA4X8HPX
+      name: Tuấn Đông
+      role: Developer
+    - slack_id: U013D61T6RZ
+      name: Đăng Khoa
+      role: Developer
+    - slack_id: U04MCKT1V2R
+      name: Trung Hậu
+      role: Developer
+    - slack_id: U01BJES9EMU
+      name: Văn Tuấn
       role: Developer
   exclude: []
   recipients:
-    - slack_id: U02Q98WQDGE
-      name: Công Lợi
+    - slack_id: U03TLBP1KCY
+      name: Tú Nguyễn
+      role: Brse
+    - slack_id: U9K73J941
+      name: Trương Lăng
       role: Leader
 
-C0BNWSFS363:
-  project: NDT Sale2
-  channel: pj-ndt-test-report2
+C0ARLFBT6TB:
+  project: NDT Sale
+  channel: pj-ndt-sale-vn
   members:
-    - slack_id: U02Q98WQDGE
-      name: Công Lợi
+    - slack_id: U019S9M7BA6
+      name: Tấn Đạt
+      role: Developer
+    - slack_id: UNSNQ12VA
+      name: Toán Đào
       role: Developer
   exclude: []
   recipients:
+    - slack_id: U0394E0BZFW
+      name: Phú Thọ
+      role: Brse
     - slack_id: U02Q98WQDGE
       name: Công Lợi
       role: Leader
