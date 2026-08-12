@@ -1,0 +1,4 @@
+{
+  "name": "si-mcp-slack",
+  "install": "npm ci"
+}
