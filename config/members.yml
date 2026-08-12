@@ -15,7 +15,7 @@
 
 C0BPE1VCELR:
   project: NDT Sale
-  channel: pj-ndt-sale-vn
+  channel: pj-ndt-test-report
   members:
     - slack_id: U02Q98WQDGE
       name: Công Lợi
