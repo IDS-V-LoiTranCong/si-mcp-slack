@@ -49,6 +49,19 @@ async function callSlackApi(method, token, body) {
   return readSlackResponse(response, method);
 }
 
+async function callSlackApiForm(method, token, params) {
+  const response = await fetch(`https://slack.com/api/${method}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+    },
+    body: new URLSearchParams(params).toString(),
+  });
+
+  return readSlackResponse(response, method);
+}
+
 server.registerTool(
   "slack_upload_markdown",
   {
@@ -90,12 +103,14 @@ server.registerTool(
         throw new Error("Markdown content exceeds the 1 MiB safety limit");
       }
 
-      const uploadTicket = await callSlackApi(
+      // Slack requires form-urlencoded for files.getUploadURLExternal;
+      // JSON body returns invalid_arguments.
+      const uploadTicket = await callSlackApiForm(
         "files.getUploadURLExternal",
         token,
         {
           filename,
-          length: fileBytes.byteLength,
+          length: String(fileBytes.byteLength),
         },
       );
 
