@@ -56,3 +56,34 @@ C0ARLFBT6TB:
     - slack_id: U02Q98WQDGE
       name: Công Lợi
       role: Leader
+
+C0BN64RJT0B:
+  project: Project Management VN
+  channel: project-management-vn
+  members:
+    - slack_id: U0645UYPX8U
+      name: Thành Trung
+      role: Developer
+    - slack_id: U08GQK0MJRF
+      name: Huỳnh An
+      role: Developer
+    - slack_id: U041QM1H8UQ
+      name: Trương Lam
+      role: Developer
+    - slack_id: U0417RHLGKW
+      name: Hiếu Thành
+      role: Developer
+    - slack_id: U08FYPH1STH
+      name: Tấn Trung
+      role: Developer
+  exclude: []
+  recipients:
+    - slack_id: U05T9U6GTJ5
+      name: Hồng Phúc
+      role: Brse
+    - slack_id: U08P1N83S1H
+      name: Ngọc Yến
+      role: Brse
+    - slack_id: U01HGDYCDPZ
+      name: Quang Học
+      role: Leader
